@@ -72,3 +72,25 @@
 // }
 
 // console.log(pascalTriangle(size));
+
+// reverse vowels of a string
+
+let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+var reverseVowels = function (s) {
+  let counter = 0,
+    len = s.length,
+    vowelStore = '',
+    arr = s.split('');
+  for (let char of s) {
+    if (vowels.indexOf(char) >= 0) vowelStore += char;
+  }
+  for (let i = len - 1; i >= 0; i--) {
+    if (vowels.indexOf(arr[i]) >= 0) {
+      arr[i] = vowelStore[counter];
+      counter++;
+    }
+  }
+  return arr.join('');
+};
+console.log(reverseVowels('logic')); // ligoc
+console.log(reverseVowels('open')); // epon
